@@ -41,7 +41,7 @@ function Main() {
           <div className="card_top">
             <p>{item.stationName} <span>{item.sido}</span></p>
           </div>
-          <h3>{GRADE[item.pm10Grade]}</h3>
+          <h3>{GRADE[item.pm10Grade] ?? '알수없음'}</h3>
           <div className="card_text">
             <p>미세먼지 수치: {item.pm10Value}</p>
             <p>&#40;{item.dataTime} 기준&#41;</p>
