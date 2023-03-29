@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+
 const DustApi = () => {
   const fetchData = async (sidoName) => {
     const getParameters = {
-      serviceKey: 'ByRNSYZUzWf4ROuy4L8wZJia0uWaJN6mm1CT1h0Dg78bzHrFcNKJ9zVTjBlXcjRRWWQUaCE94cQtpnXRGswyWg==',
+      serviceKey: import.meta.env.VITE_SEVICE_KEY,
       returnType: 'json',
       numOfRows: '100',
       pageNo: '1',
