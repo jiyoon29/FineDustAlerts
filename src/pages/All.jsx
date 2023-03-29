@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { areaContext } from '../components/Layout';
+import { GRADE } from '../constants/Grade';
+import * as S from '../styles/card';
 
 function All() {
   const { fetchData, sido } = useContext(areaContext);
@@ -31,21 +33,20 @@ function All() {
   }
 
   return (
-    <div>
+    <S.CardList>
       {data.map((item, index) => (
-        <div key={index}>
-          <div>측정소명: {item.stationName}</div>
-          <div>측정시간: {item.dataTime}</div>
-          <div>미세먼지 농도: {item.pm10Value} ㎍/㎥</div>
-          <div>초미세먼지 농도: {item.pm25Value} ㎍/㎥</div>
-          <div>아황산가스 농도: {item.so2Value} ppm</div>
-          <div>일산화탄소 농도: {item.coValue} ppm</div>
-          <div>오존 농도: {item.o3Value} ppm</div>
-          <div>이산화질소 농도: {item.no2Value} ppm</div>
-          <hr />
-        </div>
+        <S.ListItem key={index} grade={Number(item.pm10Grade)}>
+          <div className="card_top">
+            <p>{item.stationName} <span>{item.sido}</span></p>
+          </div>
+          <h3>{GRADE[item.pm10Grade] ?? '알수없음'}</h3>
+          <div className="card_text">
+            <p>미세먼지 수치: {item.pm10Value}</p>
+            <p>&#40;{item.dataTime} 기준&#41;</p>
+          </div>
+        </S.ListItem>
       ))}
-    </div>
+    </S.CardList>
   );
 }
 

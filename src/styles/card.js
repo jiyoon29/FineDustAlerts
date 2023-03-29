@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const CardList = styled.ul`
+  margin: 0 auto;
+  text-align: center;
+`;
+
 export const ListItem = styled.li`
   background-color: ${({ grade }) => {
     switch (grade) {
@@ -17,4 +22,19 @@ export const ListItem = styled.li`
         return '#d1cece';
     }
   }};
+  padding: 20px;
+  margin-bottom: 10px;
+
+  .card_top {
+    text-align: left;
+  }
+
+  h3 {
+    width: 150px;
+    line-height: 2;
+    font-size: 24px;
+    margin: 0 auto 10px;
+    background: #fff;
+    border-radius: 10px;
+  }
 `;

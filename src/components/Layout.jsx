@@ -36,7 +36,9 @@ function Layout() {
   return (
     <areaContext.Provider value={{ sido, setSido, station, setStation, fetchData, selectedStation, setSelectedStation }}>
       <Nav handleSelectChange={handleSelectChange} handleStationChange={handleStationChange} />
-      <Outlet />
+      <div className="inner">
+        <Outlet />
+      </div>
       <PageTabs />
     </areaContext.Provider>
   );

@@ -35,7 +35,7 @@ function Main() {
   }
 
   return (
-    <ul className="card_list">
+    <S.CardList className="card_list">
       {filteredData.map((item, index) => (
         <S.ListItem key={index} grade={Number(item.pm10Grade)}>
           <div className="card_top">
@@ -49,7 +49,7 @@ function Main() {
         </S.ListItem>
       ))
       }
-    </ul >
+    </S.CardList>
   );
 }
 

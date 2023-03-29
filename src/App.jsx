@@ -4,10 +4,12 @@ import All from "./pages/All";
 import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
+import GlobalStyle from "./styles/globalStyle";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Main />} />
