@@ -37,7 +37,7 @@ function Main() {
   return (
     <ul className="card_list">
       {filteredData.map((item, index) => (
-        <S.ListItem key={index} grade={item.pm10Grade}>
+        <S.ListItem key={index} grade={Number(item.pm10Grade)}>
           <div className="card_top">
             <p>{item.stationName} <span>{item.sido}</span></p>
           </div>
