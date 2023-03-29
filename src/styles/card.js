@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CardList = styled.ul`
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 100px;
 `;
 
 export const ListItem = styled.li`

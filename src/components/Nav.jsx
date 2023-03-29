@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import { sidoData } from '../constants/sido';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useOutletContext } from 'react-router-dom';
 import { areaContext } from '../components/Layout';
 import * as S from '../styles/nav';
 
 function Nav(props) {
-  const { sido, station, selectedStation } = useContext(areaContext);
+  const { sido, station, selectedStation } = props;
   const location = useLocation();
 
   const handleSelectChange = (event) => {
@@ -18,9 +18,6 @@ function Nav(props) {
     props.handleStationChange(selectStation);
   };
 
-  useEffect(() => {
-    props.handleSelectChange(sido);
-  }, [sido]);
 
   return (
     <S.Nav>

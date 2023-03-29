@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { areaContext } from '../components/Layout';
 import { GRADE } from '../constants/Grade';
 import * as S from '../styles/card';
 
 function All() {
-  const { fetchData, sido } = useContext(areaContext);
+  const { fetchData, sido } = useOutletContext();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
